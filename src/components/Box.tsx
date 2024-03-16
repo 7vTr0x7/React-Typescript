@@ -6,6 +6,7 @@ type PropType = {
 
 const Box = ({ heading, count, addFunc }: PropType) => {
   const value = addFunc(2, 5);
+
   return (
     <div>
       <h1>{heading}</h1>
