@@ -8,7 +8,9 @@ function App() {
   return (
     <>
       <div>
-        <Box heading={"Hamlo"} count={1} addFunc={addFunc} />
+        <Box heading={"Hamlo"} count={1} addFunc={addFunc}>
+          <h2>children</h2>
+        </Box>
       </div>
     </>
   );
