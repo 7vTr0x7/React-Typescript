@@ -1,3 +1,4 @@
+import Ex from "./components/Ex";
 import ThemeProvider from "./components/ThemeProvider";
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <>
       <ThemeProvider>
         <div> hello </div>
+        <Ex />
       </ThemeProvider>
     </>
   );
