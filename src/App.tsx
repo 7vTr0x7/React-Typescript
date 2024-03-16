@@ -1,14 +1,16 @@
-import Box from "./components/Box";
+import { useState } from "react";
 import Form from "./components/Form";
 
 function App() {
-  const addFunc = (n: number, m: number): number => {
-    return n + m;
-  };
+  const [value, setValue] = useState<string>("");
 
-  const returnValue = <T,>(val: T): T => {
-    return val;
-  };
+  // const addFunc = (n: number, m: number): number => {
+  //   return n + m;
+  // };
+
+  // const returnValue = <T,>(val: T): T => {
+  //   return val;
+  // };
 
   return (
     <>
@@ -21,7 +23,7 @@ function App() {
           <h2>children</h2>
         </Box> */}
 
-        <Form label={"search"} value={""} onChange={() => {}} />
+        <Form label={"search"} value={value} setter={setValue} />
       </div>
     </>
   );
