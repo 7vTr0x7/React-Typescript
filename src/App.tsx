@@ -1,29 +1,44 @@
-import { useState } from "react";
-import Form from "./components/Form";
+import { FormEvent, useState } from "react";
+
+interface Person {
+  name: string;
+  age: number;
+}
 
 function App() {
-  const [value, setValue] = useState<string>("");
+  const [user, setUser] = useState<Person>({
+    name: "",
+    age: 0,
+  });
 
-  // const addFunc = (n: number, m: number): number => {
-  //   return n + m;
-  // };
-
-  // const returnValue = <T,>(val: T): T => {
-  //   return val;
-  // };
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(user);
+  };
 
   return (
     <>
       <div>
-        {/* <Box
-          heading={"Hamlo"}
-          count={1}
-          addFunc={addFunc}
-          returnValue={returnValue}>
-          <h2>children</h2>
-        </Box> */}
+        <form onSubmit={submitHandler}>
+          <input
+            type="number"
+            value={user.age}
+            placeholder="age"
+            onChange={(e) =>
+              setUser((prev) => ({ ...prev, age: Number(e.target.value) }))
+            }
+          />
+          <input
+            type="text"
+            value={user.name}
+            placeholder="name"
+            onChange={(e) =>
+              setUser((prev) => ({ ...prev, name: e.target.value }))
+            }
+          />
 
-        <Form label={"search"} value={value} setter={setValue} />
+          <button>Register</button>
+        </form>
       </div>
     </>
   );
