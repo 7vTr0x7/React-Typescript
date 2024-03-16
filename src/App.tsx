@@ -3,8 +3,9 @@ import Box from "./components/Box";
 function App() {
   return (
     <>
-      <h1>Hello</h1>
-      <Box />
+      <div>
+        <Box heading={"Hamlo"} count={1} />
+      </div>
     </>
   );
 }
