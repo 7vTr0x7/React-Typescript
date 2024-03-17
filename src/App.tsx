@@ -1,5 +1,6 @@
 import Ex from "./components/Ex";
 import ThemeProvider from "./components/ThemeProvider";
+import UseReducer from "./components/UseReducer";
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <ThemeProvider>
         <div> hello </div>
         <Ex />
+
+        <UseReducer />
       </ThemeProvider>
     </>
   );
