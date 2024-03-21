@@ -10,6 +10,7 @@ function App() {
   const count = useSelector((state: StateType) => state.count);
 
   const inc = () => {
+    setVal(0);
     dispatch(incByValue(val));
   };
 
