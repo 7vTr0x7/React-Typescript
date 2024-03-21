@@ -1,16 +1,31 @@
-import Ex from "./components/Ex";
-import ThemeProvider from "./components/ThemeProvider";
-import UseReducer from "./components/UseReducer";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { incByValue, StateType } from "./utils/rootSlice";
 
 function App() {
+  const [val, setVal] = useState<number>(0);
+
+  const dispatch = useDispatch();
+  const count = useSelector((state: StateType) => state.count);
+
+  const inc = () => {
+    dispatch(incByValue(val));
+  };
+
   return (
     <>
-      <ThemeProvider>
-        <div> hello </div>
-        <Ex />
+      <h1>counter</h1>
+      <h1>count : {count}</h1>
+      <input
+        type="number"
+        value={val}
+        onChange={(e) => setVal(Number(e.target.value))}
+      />
 
-        <UseReducer />
-      </ThemeProvider>
+      <button disabled={val < 0} onClick={inc}>
+        Add
+      </button>
     </>
   );
 }
