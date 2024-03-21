@@ -10,10 +10,10 @@ const rootSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    inc: (state) => {
+    increment: (state) => {
       state.count += 1;
     },
-    dec: (state) => {
+    decrement: (state) => {
       state.count -= 1;
     },
     incByValue: (state, action: PayloadAction<number>) => {
@@ -22,6 +22,6 @@ const rootSlice = createSlice({
   },
 });
 
-export const { inc, dec, incByValue } = rootSlice.actions;
+export const { increment, decrement, incByValue } = rootSlice.actions;
 
 export default rootSlice.reducer;
